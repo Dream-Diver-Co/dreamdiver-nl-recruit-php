@@ -1,0 +1,39 @@
+/*** Contact page header css ***/
+.top-bottom{
+    padding: 15px 0px;
+
+}
+/*** Footer css ***/
+.text-highlight {
+ color:#000000;
+ margin-bottom:1.5rem !important;
+}
+
+.bg-lighter {
+    background-color: #0E63C8;
+}
+.text-primaryer {
+    color: white;
+}
+.bg-light-x {
+    background-color: black;
+}
+.bg-light-in {
+    background-color: #22518D;
+}
+.bg-light-gram {
+    background-color: #B20F66;
+}
+
+.ticket-page-login-btn {
+    color: white;
+    border: 2px solid #3c4ae6;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #1F1F47;
+}
+.mt-3 a:hover {
+    color: white !important;
+}
+
+

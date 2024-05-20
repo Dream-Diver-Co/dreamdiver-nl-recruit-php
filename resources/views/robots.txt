@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /https://dreamdiver.nl
+Disallow: /https://dreamdiver.nl/admin
+
+Sitemap: https://dreamdiver.nl/sitemap.xml
+
