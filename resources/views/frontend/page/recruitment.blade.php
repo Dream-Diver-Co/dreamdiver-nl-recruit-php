@@ -200,7 +200,7 @@
                                         <a href="">
                                             <img class="image-two" src="{{ asset('frontend/img/recruitment/6.png') }}" alt="">
                                         <div class="text-recruitment">
-                                            <h3 class="recruitment-h">Delivery small parcel project.</h3>
+                                            <h3 class="recruitment-img-h">Delivery small parcel project.</h3>
                                             <!-- <p class="recruitment-p">fd</p> -->
                                             <!-- <button class="recruitment-bt">More</button> -->
                                         </div>
@@ -212,7 +212,7 @@
                                         <a href="">
                                             <img class="image-two" src="{{ asset('frontend/img/recruitment/5.png') }}" alt="">
                                         <div class="text-recruitment">
-                                            <h3 class="recruitment-h">Book cover design.</h3>
+                                            <h3 class="recruitment-img-h">Book cover design.</h3>
                                             <!-- <p class="recruitment-p">abdullahgfrrrrr</p> -->
                                             <!-- <button class="recruitment-bt">More</button> -->
                                         </div>
@@ -226,7 +226,7 @@
                                         <a href="">
                                             <img class="image-two" src="{{ asset('frontend/img/recruitment/7.png') }}" alt="">
                                         <div class="text-recruitment">
-                                            <h3 class="recruitment-h">Album cover.</h3>
+                                            <h3 class="recruitment-img-h">Album cover.</h3>
                                             <!-- <p class="recruitment-p">abdullahgfrrrrr</p> -->
                                             <!-- <button class="recruitment-bt">More</button> -->
                                         </div>
@@ -238,7 +238,7 @@
                                         <a href="">
                                             <img class="image-two" src="{{ asset('frontend/img/recruitment/9.png') }}" alt="">
                                         <div class="text-recruitment">
-                                            <h3 class="recruitment-h">Product 3D modelling.</h3>
+                                            <h3 class="recruitment-img-h">Product 3D modelling.</h3>
                                             <!-- <p class="recruitment-p">abdullahgfrrrrr</p> -->
                                             <!-- <button class="recruitment-bt">More</button> -->
                                         </div>
@@ -252,7 +252,7 @@
                                 <a href="">
                                     <img class="image-one" src="{{ asset('frontend/img/recruitment/10.png') }}" alt="">
                                 <div class="text-recruitment">
-                                    <h3 class="recruitment-h">Character illustration.</h3>
+                                    <h3 class="recruitment-img-h">Character illustration.</h3>
                                     <!-- <p class="recruitment-p">abdullahgfrrrrr</p> -->
                                     <!-- <button class="recruitment-bt">More</button> -->
                                 </div>

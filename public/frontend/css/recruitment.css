@@ -73,6 +73,8 @@
     display: inline-flex;
     top: 80%;
     left: 50%;
+    border-radius: 10px;
+    background-color: #cec7c7da;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
@@ -85,6 +87,11 @@
 .recruitment-p{
     margin-top: 54px;
     margin-left: -65px;
+}
+.recruitment-img-h{
+    font-size: large;
+    margin-top: 6px;
+    padding: 10px;
 }
 .recruitment-h{
     font-size: large;
