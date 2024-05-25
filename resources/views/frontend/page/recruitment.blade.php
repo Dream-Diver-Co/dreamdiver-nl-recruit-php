@@ -98,6 +98,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
+
                                 <div class="input-group">
                                     {!! NoCaptcha::renderJs() !!}
                                     {!! NoCaptcha::display() !!}
@@ -170,9 +171,14 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="" style="text-align: center;">
-                                    <div class="g-recaptcha" data-sitekey="6LfqRd4pAAAAALTfCGC9ZX67ji3eiotn69OPiFjj"></div>
+                                <div class="input-group">
+                                    {!! NoCaptcha::renderJs() !!}
+                                    {!! NoCaptcha::display() !!}
                                 </div>
+
+                                @error('g-recaptcha-response')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="col-md-12">
                                 <div class="" style="text-align: center;">
