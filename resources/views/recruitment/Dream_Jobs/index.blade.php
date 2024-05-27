@@ -1,18 +1,56 @@
 @extends('layouts.master')
 
+
 @section('content')
+
+{{-- <h1>Contacts</h1>
+<a href="{{ route('dreamjob.create') }}">Add Contact</a>
+
+@if ($message = Session::get('success'))
+    <p>{{ $message }}</p>
+@endif
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th>Actions</th>
+    </tr>
+    @foreach ($dreamjobs as $dreamjob)
+        <tr>
+            <td>{{ $dreamjob->name }}</td>
+            <td>{{ $dreamjob->email }}</td>
+            <td>{{ $dreamjob->phone }}</td>
+            <td>{{ $dreamjob->date }}</td>
+            <td>{{ $dreamjob->note }}</td>
+            <td>
+                <a href="{{ route('dreamjobs.show', $dreamjob->id) }}">Show</a>
+                <a href="{{ route('dreamjobs.edit', $dreamjob->id) }}">Edit</a>
+                <form action="{{ route('dreamjobs.destroy', $dreamjob->id) }}" method="POST" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    @endforeach
+</table> --}}
+
 <div class="content-wrapper" style="min-height: 320.4px;">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Contact messages</h1>
+            <h1 class="m-0">Dream Job</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Contact messages</li>
+              <li class="breadcrumb-item active">Dream Job</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,14 +81,14 @@
                         @php
                             $sl = 1;
                         @endphp
-                        @foreach ($contacts as $service )
+                        @foreach ($dreamjobs as $dreamjob )
                       <tr>
                         <th scope="row">{{ $sl++ }}</th>
-                        <td>{{ $service->name; }}</td>
-                        <td>{{ $service->email; }}</td>
-                        <td>{{ $service->phone; }}</td>
+                        <td>{{ $dreamjob->name; }}</td>
+                        <td>{{ $dreamjob->email; }}</td>
+                        <td>{{ $dreamjob->phone; }}</td>
                         {{-- <td>{{ $service->message; }}</td> --}}
-                        <td>{{ $service->note; }}</td>
+                        <td>{{ $dreamjob->note; }}</td>
 
                       </tr>
                       @endforeach
@@ -68,9 +106,4 @@
     <!-- /.content -->
   </div>
 
-
-
 @endsection
-
-
-

@@ -52,54 +52,48 @@
                     <div class="modal-content-recruitment">
                         <span class="close-recruitment" onclick="closeModal('modalDreamJobs')">&times;</span>
                         <h1 class="recruitment-form-text">Find A Suitable Job</h1>
-                        @if (session('success_message'))
-                            <div class="alert alert-success">
-                                {{ session('success_message') }}
-                            </div>
-                        @endif
-                        <form class="form-recruitment" id="dreamJobForm" action="{{ url('student') }}" method="post" enctype="multipart/form-data">
-                            {!! csrf_field() !!}
+                        <form class="form-recruitment" id="dreamJobForm">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                                        <input type="text" id="dreamJobFullName" name="fullName" placeholder="Full Name" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="address" name="address" placeholder="Address" required>
+                                        <input type="text" id="dreamJobAddress" name="address" placeholder="Address" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="education" name="education" placeholder="Education" required>
+                                        <input type="text" id="dreamJobEducation" name="education" placeholder="Education" required>
 
                                     </div>
                                     <div class="input-group">
-                                        <input type="date" id="date" name="date" placeholder="Join Date" required>
+                                        <input type="date" id="dreamJobJoinDate" name="joinDate" placeholder="Join Date" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="salary" name="salary" placeholder="Expect Salary" required>
+                                        <input type="text" id="dreamJobSalary" name="salary" placeholder="Expect Salary" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="url" id="link" name="link" placeholder="Portfolio Link" required>
+                                        <input type="url" id="dreamJobPortfolio" name="portfolio" placeholder="Portfolio Link" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="email" id="email" name="email"  placeholder="Your Email" required>
+                                        <input type="email" id="dreamJobEmail" name="email"  placeholder="Your Email" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="mobile" name="mobile" placeholder="Your Phone" required>
+                                        <input type="tel" id="dreamJobPhone" name="phone" placeholder="Your Phone" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="experience" name="experience" placeholder="Work Experience" required>
+                                        <input type="text" id="dreamJobExperience" name="experience" placeholder="Work Experience" required>
                                     </div>
 
                                     <div class="input-group">
-                                        <input type="file" id="file" name="file"  placeholder="Upload Resume" required>
+                                        <input type="file" id="dreamJobResume" name="resume"  placeholder="Upload Resume" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="reference" name="reference" placeholder="Reference" required>
+                                        <input type="text" id="dreamJobReference" name="reference" placeholder="Reference" required>
                                     </div>
                                     <div class="input-group">
-                                        <textarea id="note" name="note" placeholder="Additional Comment"></textarea>
+                                        <textarea id="dreamJobComment" name="comment" placeholder="Additional Comment"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +111,7 @@
 
                             <div class="col-md-12">
                                 <div class="" style="text-align: center;">
-                                    <button type="submit"  class="submit-btn">Submit</button>
+                                    <button type="submit" class="submit-btn">Submit</button>
                                 </div>
                             </div>
                         </form>

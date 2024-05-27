@@ -11,6 +11,8 @@ use App\Http\Controllers\TickethistoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ContactformController;
 use App\Http\Controllers\BasicticketController;
+use App\Http\Controllers\DreamjobController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +116,13 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
     Route::put('/contact_form_update/{id}', [ContactformController::class, 'update'])->name('contact_form_update');
     Route::put('/contact_form_destroy/{id}', [ContactformController::class, 'destroy'])->name('contact_form_destroy');
 
+    Route::get('/dreamjob_form_index', [DreamjobController::class, 'index'])->name('dreamjob_form_index');
+    Route::get('/dreamjob_form_create', [DreamjobController::class, 'create'])->name('dreamjob_form_create');
+    // Route::post('/dreamjob_form_store', [DreamjobController::class, 'store'])->name('dreamjob_form_store');
+    Route::get('/dreamjob_form_edit/{id}', [DreamjobController::class, 'edit'])->name('dreamjob_form_edit');
+    Route::put('/dreamjob_form_update/{id}', [DreamjobController::class, 'update'])->name('dreamjob_form_update');
+    Route::put('/dreamjob_form_destroy/{id}', [DreamjobController::class, 'destroy'])->name('dreamjob_form_destroy');
+
 
     Route::get('/basicticket_index', [BasicticketController::class, 'index'])->name('basicticket_index');
     Route::get('/basicticket_create', [BasicticketController::class, 'create'])->name('basicticket_create');
@@ -121,10 +130,17 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
     Route::get('/basicticket_edit/{id}', [BasicticketController::class, 'edit'])->name('basicticket_edit');
     Route::put('/basicticket_update/{id}', [BasicticketController::class, 'update'])->name('basicticket_update');
     Route::put('/basicticket_destroy/{id}', [BasicticketController::class, 'destroy'])->name('basicticket_destroy');
+
+    // Route::resource('dreamjob', DreamjobController::class);
+    Route::resource("/student", StudentController::class);
+
 });
 
+// Route::post('/dreamjob_store', [DreamjobController::class, 'store'])->name('dreamjob_store');
 Route::post('/basicticket_store', [BasicticketController::class, 'store'])->name('basicticket_store');
 Route::post('/contact_form_store', [ContactformController::class, 'store'])->name('contact_form_store');
+Route::post('/dreamjob_form_store', [DreamjobController::class, 'store'])->name('dreamjob_form_store');
+
 
 Route::resource('tickets', TicketController::class);
 Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');

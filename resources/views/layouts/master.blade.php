@@ -28,6 +28,9 @@
 {{-- custome css --}}
 <link rel="stylesheet" href="{{ asset('backend/custome.css')}}">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
