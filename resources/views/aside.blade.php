@@ -205,37 +205,6 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-                Dream Job
-                <i class="right fas fa-angle-left"></i>
-
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('dreamjob_form_index')}}" class="nav-link ">
-
-                  <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Dream job All</p>
-                </a>
-              </li>
-
-
-              <li class="nav-item">
-                <a href="{{route('contact_form_create')}}" class="nav-link ">
-                    <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Dream Job Create</p>
-                </a>
-              </li>
-
-
-            </ul>
-
-          </li>
-
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>
                 Perfect Employee
                 <i class="right fas fa-angle-left"></i>
 
@@ -243,7 +212,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('contact_form_index')}}" class="nav-link ">
+                <a href="{{route('employee.index')}}" class="nav-link ">
 
                   <i class="nav-icon fas fa-angle-right"></i>
                   <p>Perfect Employee All</p>
@@ -252,7 +221,7 @@
 
 
               <li class="nav-item">
-                <a href="{{route('contact_form_create')}}" class="nav-link ">
+                <a href="{{route('employee.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
                   <p>Perfect Employee Create</p>
                 </a>
@@ -263,13 +232,13 @@
 
           </li>
 
-        
+
 
           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-                student
+                Dream Jobs
                 <i class="right fas fa-angle-left"></i>
 
               </p>
@@ -279,17 +248,17 @@
                 <a href="{{route('student.index')}}" class="nav-link ">
 
                   <i class="nav-icon fas fa-angle-right"></i>
-                  <p>student All</p>
+                  <p>Dream Jobs All Form</p>
                 </a>
               </li>
 
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{route('student.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
-                  <p>student Create</p>
+                  <p>Dream Jobs Create</p>
                 </a>
-              </li>
+              </li> --}}
 
 
             </ul>

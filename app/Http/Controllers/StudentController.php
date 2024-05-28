@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view ('students.index')->with('students', $students);
+        return view ('Dream_Jobs.index')->with('students', $students);
     }
 
     /**
@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        return view('Dream_Jobs.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class StudentController extends Controller
 
         Student::create($input);
 
-        return redirect()->back()->with('success_message', 'Student added successfully!');
+        return redirect()->back()->with('success_message', 'Dream Job added successfully!');
 
         // $input = $request->all();
         // Student::create($input);
@@ -91,7 +91,7 @@ class StudentController extends Controller
         // return view('students.show')->with('students', $student);
 
         $student = Student::find($id);
-        return view('students.show')->with('students', $student);
+        return view('Dream_Jobs.show')->with('students', $student);
     }
 
     /**
@@ -108,7 +108,7 @@ class StudentController extends Controller
         // return view('students.edit')->with('students', $student);
 
         $student = Student::find($id);
-        return view('students.edit')->with('students', $student);
+        return view('Dream_Jobs.edit')->with('students', $student);
     }
 
     /**
@@ -155,7 +155,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('student')->with('flash_message', 'student Updated!');
+        return redirect('student')->with('flash_message', 'Dream Job Updated!');
     }
 
     /**
@@ -167,12 +167,12 @@ class StudentController extends Controller
         $student = Student::find($id);
 
         if (!$student) {
-            return redirect('student')->with('error_message', 'Student not found!');
+            return redirect('student')->with('error_message', 'Dream Job not found!');
         }
 
         $student->delete();
 
-        return redirect('student')->with('flash_message', 'Student deleted!');
+        return redirect('student')->with('flash_message', 'Dream Job deleted!');
 
 
         // Student::destroy($id);

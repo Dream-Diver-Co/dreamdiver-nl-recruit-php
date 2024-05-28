@@ -13,6 +13,8 @@ use App\Http\Controllers\ContactformController;
 use App\Http\Controllers\BasicticketController;
 use App\Http\Controllers\DreamjobController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -132,7 +134,7 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
     Route::put('/basicticket_destroy/{id}', [BasicticketController::class, 'destroy'])->name('basicticket_destroy');
 
     // Route::resource('dreamjob', DreamjobController::class);
-    Route::resource("/student", StudentController::class);
+    // Route::resource("/student", StudentController::class);
 
 });
 
@@ -141,6 +143,9 @@ Route::post('/basicticket_store', [BasicticketController::class, 'store'])->name
 Route::post('/contact_form_store', [ContactformController::class, 'store'])->name('contact_form_store');
 Route::post('/dreamjob_form_store', [DreamjobController::class, 'store'])->name('dreamjob_form_store');
 
+Route::resource('employee', EmployeeController::class);
+// Dream job route (student)
+Route::resource("/student", StudentController::class);
 
 Route::resource('tickets', TicketController::class);
 Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');
