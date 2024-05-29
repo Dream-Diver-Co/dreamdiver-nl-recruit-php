@@ -127,52 +127,58 @@
                     <div class="modal-content-recruitment">
                         <span class="close-recruitment" onclick="closeModal('modalPerfectEmploy')">&times;</span>
                         <h1 class="recruitment-form-text">Post A Job: Find Skilled Employee</h1>
-                        <form class="form-recruitment"  id="perfectEmployeeForm">
+                        @if (session('success_message'))
+                            <div class="alert alert-success">
+                                {{ session('success_message') }}
+                            </div>
+                        @endif
+                        <form action="{{ url('employee') }}" method="post" enctype="multipart/form-data" class="form-recruitment"  id="perfectEmployeeForm">
+                            {!! csrf_field() !!}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="text" id="employeeRecruiterName" name="recruiterName" placeholder="Recruiter's Name:" required>
+                                        <input type="text" id="name" name="name" placeholder="Recruiter's Name:" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeJobTitle" name="jobTitle" placeholder="Job Title/Position" required>
+                                        <input type="text" id="job_title" name="job_title" placeholder="Job Title/Position" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeLocation" name="location" placeholder="Location" required>
+                                        <input type="text" id="location" name="location" placeholder="Location" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeSalaryRange" name="salaryRange" placeholder="Salary Range" required>
+                                        <input type="text" id="salary" name="salary" placeholder="Salary Range" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeEducationalReq" name="educationalReq" placeholder="Educational Requirement" required>
+                                        <input type="text" id="education" name="education" placeholder="Educational Requirement" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="datetime-local" id="employeeDeadline" name="deadline" placeholder="Applications Deadline" required>
+                                        <input type="file" id="file" name="file" placeholder="Applications Deadline" required>
                                     </div>
                                     <div class="input-group">
-                                        <textarea id="employeeRecruitmentProcess" name="recruitmentProcess" placeholder="Recruitment Process" required></textarea>
+                                        <textarea id="process" name="process" placeholder="Recruitment Process" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="text" id="employeeCompanyName" name="companyName" placeholder="Company Name" required>
+                                        <input type="text" id="company_name" name="company_name" placeholder="Company Name" required>
                                     </div>
                                     <div class="input-group">
-                                        <textarea id="employeeDescription" name="description" placeholder="Job Description" required></textarea>
+                                        <textarea id="job_title" name="job_title" placeholder="Job Description" required></textarea>
                                     </div>
                                     <div class="input-group">
-                                        <input type="date" id="employeeJoinDate" name="joinDate" placeholder="Join Date" required>
+                                        <input type="date" id="date" name="date" placeholder="Join Date" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="email" id="employeeRecruiterEmail" name="recruiterEmail" placeholder="Recruiter's Email" required>
+                                        <input type="email" id="email" name="email" placeholder="Recruiter's Email" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeSkills" name="skills" placeholder="Skills / Qualifications" required>
+                                        <input type="text" id="skills" name="skills" placeholder="Skills / Qualifications" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="text" id="employeeContactInfo" name="contactInfo" placeholder="Contact Information" required>
+                                        <input type="text" id="mobile" name="mobile" placeholder="Contact Information" required>
                                     </div>
                                     <div class="input-group">
-                                        <textarea id="employeeCultureValues" name="cultureValues" placeholder="Company Culture/Values" required></textarea>
+                                        <textarea id="employeeCultureValues" name="note" placeholder="Company Culture/Values" required></textarea>
                                     </div>
                                 </div>
                             </div>

@@ -169,7 +169,6 @@
 
           </li>
 
-
           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-envelope"></i>
@@ -203,40 +202,7 @@
 
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>
-                Perfect Employee
-                <i class="right fas fa-angle-left"></i>
-
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('employee.index')}}" class="nav-link ">
-
-                  <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Perfect Employee All</p>
-                </a>
-              </li>
-
-
-              <li class="nav-item">
-                <a href="{{route('employee.create')}}" class="nav-link ">
-                    <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Perfect Employee Create</p>
-                </a>
-              </li>
-
-
-            </ul>
-
-          </li>
-
-
-
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-envelope"></i>
+              <i class="nav-icon fa fa-search"></i>
               <p>
                 Dream Jobs
                 <i class="right fas fa-angle-left"></i>
@@ -265,7 +231,36 @@
 
           </li>
 
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Perfect Employee
+                <i class="right fas fa-angle-left"></i>
 
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('employee.index')}}" class="nav-link ">
+
+                  <i class="nav-icon fas fa-angle-right"></i>
+                  <p>Perfect Employee All</p>
+                </a>
+              </li>
+
+
+              {{-- <li class="nav-item">
+                <a href="{{route('employee.create')}}" class="nav-link ">
+                    <i class="nav-icon fas fa-angle-right"></i>
+                  <p>Perfect Employee Create</p>
+                </a>
+              </li> --}}
+
+
+            </ul>
+
+          </li>
 
           <li class="nav-item ">
             <a href="#" class="nav-link ">
