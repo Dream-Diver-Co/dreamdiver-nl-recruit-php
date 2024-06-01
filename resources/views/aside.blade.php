@@ -204,23 +204,23 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-search"></i>
               <p>
-                Dream Jobs
+                Posted Jobs
                 <i class="right fas fa-angle-left"></i>
 
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('student.index')}}" class="nav-link ">
+                <a href="{{route('postedjob.index')}}" class="nav-link ">
 
                   <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Dream Jobs All Form</p>
+                  <p>Posted Jobs All Form</p>
                 </a>
               </li>
 
 
               {{-- <li class="nav-item">
-                <a href="{{route('student.create')}}" class="nav-link ">
+                <a href="{{route('postedjob.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
                   <p>Dream Jobs Create</p>
                 </a>

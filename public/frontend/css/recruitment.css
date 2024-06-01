@@ -579,3 +579,7 @@ resize: vertical;
 .form-recruitment .submit-btn {
 margin-top: 15px;
 }
+
+.alert-success {
+    transition: opacity 0.5s ease-out;
+}

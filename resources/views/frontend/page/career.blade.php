@@ -59,7 +59,7 @@
 
 
                                             <div class="input-group cv-button">
-                                                <input type="file" id="fileInput" name="fileInput"
+                                                <input type="date" id="fileInput" name="fileInput"
                                                     onchange="displayFileName(this)">
 
                                                 <!-- Custom button to trigger file input -->

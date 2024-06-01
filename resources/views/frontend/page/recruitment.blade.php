@@ -17,6 +17,18 @@
 
     <section>
         <div class="container py-5 recruitment-zindex">
+            @if(session('success_message'))
+                <div id="successMessagerecruitment" class="alert alert-success">
+                    {{ session('success_message') }}
+                </div>
+
+                <script>
+                    // Auto-hide success message after 5 seconds
+                    setTimeout(function(){
+                        document.getElementById('successMessagerecruitment').style.display = 'none';
+                    }, 5000);
+                </script>
+            @endif
 
             <div class="row g-5">
                 <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -52,12 +64,18 @@
                     <div class="modal-content-recruitment">
                         <span class="close-recruitment" onclick="closeModal('modalDreamJobs')">&times;</span>
                         <h1 class="recruitment-form-text">Find A Suitable Job</h1>
-                        @if (session('success_message'))
+                        {{-- @if (session('success_message'))
                             <div class="alert alert-success">
                                 {{ session('success_message') }}
                             </div>
-                        @endif
-                        <form class="form-recruitment" id="dreamJobForm" action="{{ url('student') }}" method="post" enctype="multipart/form-data">
+                            <script>
+                                // Auto-hide success message after 5 seconds
+                                setTimeout(function(){
+                                    document.getElementById('successMessagerecruitment').style.display = 'none';
+                                }, 5000);
+                            </script>
+                        @endif --}}
+                        <form class="form-recruitment" id="dreamJobForm" action="{{ url('postedjob') }}" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                             <div class="row">
                                 <div class="col-md-6">
@@ -93,7 +111,7 @@
                                     </div>
 
                                     <div class="input-group">
-                                        <input type="file" id="file" name="file"  placeholder="Upload Resume" required>
+                                        <input type="file" id="file" name="file"  placeholder="Upload Resume">
                                     </div>
                                     <div class="input-group">
                                         <input type="text" id="reference" name="reference" placeholder="Reference" required>
@@ -127,11 +145,17 @@
                     <div class="modal-content-recruitment">
                         <span class="close-recruitment" onclick="closeModal('modalPerfectEmploy')">&times;</span>
                         <h1 class="recruitment-form-text">Post A Job: Find Skilled Employee</h1>
-                        @if (session('success_message'))
+                        {{-- @if (session('success_message'))
                             <div class="alert alert-success">
                                 {{ session('success_message') }}
                             </div>
-                        @endif
+                            <script>
+                                // Auto-hide success message after 5 seconds
+                                setTimeout(function(){
+                                    document.getElementById('successMessagerecruitment').style.display = 'none';
+                                }, 5000);
+                            </script>
+                        @endif --}}
                         <form action="{{ url('employee') }}" method="post" enctype="multipart/form-data" class="form-recruitment"  id="perfectEmployeeForm">
                             {!! csrf_field() !!}
                             <div class="row">
@@ -152,7 +176,7 @@
                                         <input type="text" id="education" name="education" placeholder="Educational Requirement" required>
                                     </div>
                                     <div class="input-group">
-                                        <input type="file" id="file" name="file" placeholder="Applications Deadline" required>
+                                        <input type="file" id="file" name="file" placeholder="Applications Deadline">
                                     </div>
                                     <div class="input-group">
                                         <textarea id="process" name="process" placeholder="Recruitment Process" required></textarea>
@@ -401,6 +425,5 @@
             </div>
         </div>
     </section>
-
 
 @endsection

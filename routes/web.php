@@ -141,11 +141,12 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
 // Route::post('/dreamjob_store', [DreamjobController::class, 'store'])->name('dreamjob_store');
 Route::post('/basicticket_store', [BasicticketController::class, 'store'])->name('basicticket_store');
 Route::post('/contact_form_store', [ContactformController::class, 'store'])->name('contact_form_store');
-Route::post('/dreamjob_form_store', [DreamjobController::class, 'store'])->name('dreamjob_form_store');
+
 
 Route::resource('employee', EmployeeController::class);
 // Dream job route (student)
-Route::resource("/student", StudentController::class);
+// Route::resource("/student", StudentController::class);
+Route::resource("/postedjob", StudentController::class);
 
 Route::resource('tickets', TicketController::class);
 Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');
