@@ -45,6 +45,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
+                                                        <th>Actions</th>
                                                         <th>Name</th>
                                                         <th>Email</th>
                                                         <th>Phone</th>
@@ -56,13 +57,22 @@
                                                         <th>Reference</th>
                                                         <th>Link</th>
                                                         <th>Note</th>
-                                                        <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($students as $item)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
+                                                        <td>
+                                                            <a href="{{ url('/postedjob/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm" style="height: 30px; width: 65px;"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                                            {{-- <a href="{{ url('/postedjob/' . $item->id . '/edit') }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> --}}
+
+                                                            <form method="POST" action="{{ url('/postedjob/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                {{ method_field('DELETE') }}
+                                                                {{ csrf_field() }}
+                                                                <button type="submit" class="btn btn-danger btn-sm" style="height: 30px; width: 65px; margin-top: 5px;" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                            </form>
+                                                        </td>
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->email }}</td>
                                                         <td>{{ $item->mobile }}</td>
@@ -74,16 +84,6 @@
                                                         <td>{{ $item->reference }}</td>
                                                         <td>{{ $item->link }}</td>
                                                         <td>{{ $item->note }}</td>
-                                                        <td>
-                                                            <a href="{{ url('/postedjob/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm" style="height: 30px; width: 65px;"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                                            {{-- <a href="{{ url('/postedjob/' . $item->id . '/edit') }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> --}}
-
-                                                            <form method="POST" action="{{ url('/postedjob/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                                {{ method_field('DELETE') }}
-                                                                {{ csrf_field() }}
-                                                                <button type="submit" class="btn btn-danger btn-sm" style="height: 30px; width: 65px; margin-top: 5px;" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                                            </form>
-                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

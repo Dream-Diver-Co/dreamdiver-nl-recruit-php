@@ -37,6 +37,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Actions</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Company Name</th>
@@ -51,13 +52,21 @@
                                             <th>Salary</th>
                                             <th>Recruitment Process</th>
                                             <th>company culture</th>
-                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($employees as $employee)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <a href="{{ url('/employee/' . $employee->id) }}" title="View Employee"><button class="btn btn-info btn-sm" style="height: 30px; width: 70px;"> View</button></a>
+                                                {{-- <a href="{{ url('/employee/' . $employee->id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm">Edit</button></a> --}}
+                                                <form method="POST" action="{{ url('/employee' . '/' . $employee->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger btn-sm" style="height: 30px; width: 70px; margin-top: 5px;" title="Delete Employee" onclick="return confirm('Confirm delete?')"> Delete</button>
+                                                </form>
+                                            </td>
                                             <td>{{ $employee->name }}</td>
                                             <td>{{ $employee->email }}</td>
                                             <td>{{ $employee->company_name }}</td>
@@ -72,16 +81,6 @@
                                             <td>{{ $employee->salary }}</td>
                                             <td>{{ $employee->process }}</td>
                                             <td>{{ $employee->note }}</td>
-
-                                            <td>
-                                                <a href="{{ url('/employee/' . $employee->id) }}" title="View Employee"><button class="btn btn-info btn-sm" style="height: 30px; width: 65px;">View</button></a>
-                                                {{-- <a href="{{ url('/employee/' . $employee->id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm">Edit</button></a> --}}
-                                                <form method="POST" action="{{ url('/employee' . '/' . $employee->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="height: 30px; width: 65px; margin-top: 5px;" title="Delete Employee" onclick="return confirm('Confirm delete?')">Delete</button>
-                                                </form>
-                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
