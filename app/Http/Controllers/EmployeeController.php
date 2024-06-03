@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Mail\EmployeeNotification;
+use Illuminate\Support\Facades\Mail;
 
 class EmployeeController extends Controller
 {
@@ -29,7 +31,12 @@ class EmployeeController extends Controller
             $input['file'] = $request->file('file')->store('files', 'public');
         }
 
-        Employee::create($input);
+        // Employee::create($input);
+        $employee = Employee::create($input);
+
+        // Send notification email
+        Mail::to('sazaldreamdiver@gmail.com')->send(new EmployeeNotification($employee));
+
         return redirect()->back()->with('success_message', 'Employee added successfully!');
     }
 

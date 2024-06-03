@@ -44,6 +44,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'auth_mode' => null,
         ],
 
         'ses' => [

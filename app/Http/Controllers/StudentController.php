@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Mail\StudentNotification;
+use Illuminate\Support\Facades\Mail;
 
 class StudentController extends Controller
 {
@@ -68,8 +70,12 @@ class StudentController extends Controller
             $input['file'] = $request->file('file')->store('files', 'public');
         }
 
-        Student::create($input);
+        // Student::create($input);
+        $student = Student::create($input);
 
+         // Send notification email
+         Mail::to('sazaldreamdiver@gmail.com')->send(new StudentNotification($student));
+        //  dd('send');
         return redirect()->back()->with('success_message', 'Dream Job added successfully!');
 
         // $input = $request->all();
