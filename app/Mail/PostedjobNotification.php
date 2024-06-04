@@ -3,23 +3,25 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class StudentNotification extends Mailable
+class PostedjobNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $student;
-
     /**
      * Create a new message instance.
-     *
      * @return void
      */
+
     public function __construct($student)
     {
-        $this->student = $student;
+         $this->student = $student;
     }
 
     /**
@@ -29,7 +31,19 @@ class StudentNotification extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.student_notification')
+        return $this->view('emails.postedjob_notification')
                     ->with('student', $this->student);
     }
+
+    /**
+     * Get the message envelope.
+     */
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Postedjob Notification',
+        );
+    }
+
+   
 }

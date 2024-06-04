@@ -35,7 +35,7 @@ class EmployeeController extends Controller
         $employee = Employee::create($input);
 
         // Send notification email
-        Mail::to('sazaldreamdiver@gmail.com')->send(new EmployeeNotification($employee));
+        Mail::to('dreamdiver2017@gmail.com')->send(new EmployeeNotification($employee));
 
         return redirect()->back()->with('success_message', 'Employee added successfully!');
     }

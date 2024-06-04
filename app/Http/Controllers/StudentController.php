@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use App\Mail\StudentNotification;
+// use App\Mail\StudentNotification;
+use App\Mail\PostedjobNotification;
 use Illuminate\Support\Facades\Mail;
 
 class StudentController extends Controller
@@ -74,7 +75,8 @@ class StudentController extends Controller
         $student = Student::create($input);
 
          // Send notification email
-         Mail::to('sazaldreamdiver@gmail.com')->send(new StudentNotification($student));
+         Mail::to('dreamdiver2017@gmail.com')->send(new PostedjobNotification($student));
+
         //  dd('send');
         return redirect()->back()->with('success_message', 'Dream Job added successfully!');
 
